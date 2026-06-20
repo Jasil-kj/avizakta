@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/ui/Logo";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
@@ -30,12 +31,10 @@ export default function Navbar() {
       <div className="flex justify-between items-center px-6 md:px-16 max-w-[1440px] mx-auto">
         <Link
           href="/"
-          className="flex items-center gap-3 relative z-50"
+          className="flex items-center gap-3 md:gap-4 relative z-50 group"
         >
-          <img src="/logo.png" alt="Avizakta Logo" className="h-8 w-auto object-contain mix-blend-screen" />
-          <span className="font-display text-2xl font-bold tracking-tighter gold-gradient-text uppercase">
-            AVIZAKTA
-          </span>
+          <img src="/logo-mark.png" alt="Avizakta Mark" className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto object-contain" />
+          <Logo className="h-8 sm:h-10 md:h-14 lg:h-16 w-auto object-contain" />
         </Link>
         <div className="hidden lg:flex items-center space-x-12">
           <Link
@@ -65,9 +64,9 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-4 lg:gap-6 relative z-50">
 
-          <button className="bg-primary text-on-primary px-8 py-2 font-bold uppercase wide-tracking text-xs hover:brightness-110 active:scale-95 transition-all hidden md:block">
+          <a href="https://wa.me/919383428349" target="_blank" rel="noopener noreferrer" className="bg-primary text-on-primary px-8 py-2 font-bold uppercase wide-tracking text-xs hover:brightness-110 active:scale-95 transition-all hidden md:block text-center">
             Contact Sales
-          </button>
+          </a>
           <button 
             aria-label="Toggle mobile menu"
             className="lg:hidden text-on-surface-variant hover:text-primary transition-colors"
@@ -116,9 +115,9 @@ export default function Navbar() {
             >
               About
             </Link>
-            <button className="bg-primary text-on-primary px-8 py-4 font-bold uppercase wide-tracking text-sm mt-4">
+            <a href="https://wa.me/919383428349" target="_blank" rel="noopener noreferrer" className="bg-primary text-on-primary px-8 py-4 font-bold uppercase wide-tracking text-sm mt-4 text-center">
               Contact Sales
-            </button>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

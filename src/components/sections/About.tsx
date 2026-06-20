@@ -24,7 +24,7 @@ export default function About() {
           </p>
           <div className="grid grid-cols-2 gap-12">
             <div className="border-l border-primary/30 pl-6">
-              <div className="text-4xl font-display font-bold gold-gradient-text">12+</div>
+              <div className="text-4xl font-display font-bold gold-gradient-text">13+</div>
               <p className="font-label text-[10px] uppercase wide-tracking text-on-surface-variant mt-2">Years of Innovation</p>
             </div>
             <div className="border-l border-primary/30 pl-6">

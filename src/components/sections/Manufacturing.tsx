@@ -1,33 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cpu, Layers, LayoutTemplate, Headset } from "lucide-react";
+import { Cpu, Lightbulb, Boxes, Headset } from "lucide-react";
 
 export default function Manufacturing() {
   const cards = [
     {
-      icon: <LayoutTemplate size={48} className="text-primary mb-8" />,
+      icon: <Boxes size={48} className="text-primary mb-8" />,
       title: "OEM Solutions",
-      desc: "Complete product manufacturing under your brand with strict IP protection and quality control.",
-      features: ["DESIGN FOR MFG", "QUALITY ASSURANCE", "GLOBAL LOGISTICS"]
+      desc: "End-to-end OEM manufacturing services for lighting brands, distributors, and private-label partners with strict quality control and scalable production capabilities.",
+      features: ["DESIGN FOR MANUFACTURING", "PRIVATE LABEL PRODUCTION", "QUALITY ASSURANCE"]
     },
     {
-      icon: <Layers size={48} className="text-primary mb-8" />,
-      title: "Metal Fabrication",
-      desc: "State-of-the-art CNC, laser cutting, and powder coating facilities for high-precision components.",
-      features: ["CNC MACHINING", "ALUMINUM EXTRUSION", "CUSTOM FINISHES"]
+      icon: <Lightbulb size={48} className="text-primary mb-8" />,
+      title: "Lighting Solutions",
+      desc: "Design and production of decorative, architectural, commercial, and industrial lighting systems through our Decobox and Bovex divisions.",
+      features: ["ARCHITECTURAL LIGHTING", "COMMERCIAL LIGHTING", "CUSTOM LIGHTING SYSTEMS"]
     },
     {
       icon: <Cpu size={48} className="text-primary mb-8" />,
-      title: "Custom Dev",
-      desc: "Bespoke engineering for unique technical challenges across diverse industrial sectors.",
-      features: ["RAPID PROTOTYPING", "ELECTRONIC DESIGN", "FIRMWARE DEV"]
+      title: "Custom Development",
+      desc: "Custom product development services from concept and prototyping to engineering validation and production-ready solutions.",
+      features: ["RAPID PROTOTYPING", "PRODUCT ENGINEERING", "TECHNICAL INNOVATION"]
     },
     {
       icon: <Headset size={48} className="text-primary mb-8" />,
-      title: "Eng. Support",
-      desc: "Direct access to our senior engineering team throughout your product's lifecycle.",
-      features: ["TECH CONSULTING", "COMPLIANCE TESTING", "SYSTEM INTEGRATION"]
+      title: "Engineering Support",
+      desc: "Expert engineering consultation, technical problem-solving, product optimization, and ongoing project support throughout the product lifecycle.",
+      features: ["TECHNICAL CONSULTING", "SYSTEM INTEGRATION", "PERFORMANCE OPTIMIZATION"]
     }
   ];
 
@@ -43,17 +43,19 @@ export default function Manufacturing() {
           >
             <span className="font-label text-primary wide-tracking uppercase text-xs">Capabilities</span>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-on-surface mt-4">
-              Manufacturing <br/>Beyond Products.
+              Core Capabilities.
             </h2>
           </motion.div>
-          <motion.button 
+          <motion.a 
+            href="/Avizakta_Product_List_New.pdf"
+            download="Avizakta_Brochure.pdf"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass-panel px-10 py-4 font-label text-[10px] uppercase wide-tracking text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300"
+            className="glass-panel px-10 py-4 font-label text-[10px] uppercase wide-tracking text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300 inline-block"
           >
-            Download Capability Statement
-          </motion.button>
+            Download Brochure
+          </motion.a>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, i) => (

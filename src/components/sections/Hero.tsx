@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ChevronDown } from "lucide-react";
+import { Logo } from "@/components/ui/Logo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,7 +26,7 @@ export default function Hero() {
       canvas.width = 1920;
       canvas.height = 1080;
 
-      const frameCount = 240;
+      const frameCount = 140;
       const currentFrame = (index: number) =>
         `/hero-sequence/${(index + 1).toString().padStart(4, "0")}.webp`;
 
@@ -60,7 +61,7 @@ export default function Hero() {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "+=400%",
+          end: "+=500%",
           scrub: 0.5, // Small scrub delay for smooth interpolation
           pin: true,
           onUpdate: render,
@@ -97,9 +98,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-10 pointer-events-none">
         {/* Scene 1: Logo */}
         <div ref={textGroup1Ref} className="absolute inset-0 flex flex-col items-center justify-center opacity-0 scale-90">
-          <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-black tracking-tighter gold-gradient-text">
-            AVIZAKTA
-          </h1>
+          <Logo animate className="w-[90vw] max-w-[1000px] h-[20vh] md:h-[25vh] lg:h-[30vh] scale-100 md:scale-110" />
           <p className="font-label text-primary wide-tracking uppercase mt-4">
             Forging The Future
           </p>

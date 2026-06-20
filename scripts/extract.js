@@ -3,37 +3,55 @@ const ffmpeg = require('ffmpeg-static');
 const path = require('path');
 const fs = require('fs');
 
-const inputPath = path.resolve('c:\\Users\\jasil\\OneDrive\\Desktop\\AVIZAKTA\\avizakta 3d.mp4');
+const inputPath = path.resolve('c:\\Users\\jasil\\OneDrive\\Desktop\\AVIZAKTA\\TensorPix - Wall_light_brand_film_story_202606210026-ezremove.mp4');
 const outputDir = path.resolve(__dirname, '../public/hero-sequence');
+const tempDir = path.resolve(__dirname, '../public/hero-sequence-temp');
 
-// Ensure output dir exists
-if (!fs.existsSync(outputDir)) {
-  fs.mkdirSync(outputDir, { recursive: true });
+// Ensure dirs exist
+if (fs.existsSync(outputDir)) {
+  fs.rmSync(outputDir, { recursive: true, force: true });
 }
+fs.mkdirSync(outputDir, { recursive: true });
 
-console.log('Extracting exactly 120 frames...');
+if (fs.existsSync(tempDir)) {
+  fs.rmSync(tempDir, { recursive: true, force: true });
+}
+fs.mkdirSync(tempDir, { recursive: true });
 
-// We want 120 frames. We'll use -vframes 120.
-// If we wanted to span the entire video, we'd need its duration. 
-// For now, let's just extract all frames, and we'll see how many there are.
-// Then we can rename them to 0001-0120 if there are exactly 120.
-// We'll scale to 1920 width to keep size reasonable for web.
+console.log('Extracting all frames temporarily...');
+
 const args = [
   '-i', inputPath,
   '-vf', 'scale=1920:-1',
   '-vcodec', 'libwebp',
-  '-quality', '80', // webp quality
-  path.join(outputDir, '%04d.webp')
+  '-quality', '70', // slightly lower quality for faster load and smaller size
+  path.join(tempDir, '%04d.webp')
 ];
 
 const child = execFile(ffmpeg, args, (error, stdout, stderr) => {
   if (error) {
     console.error('Error extracting frames:', error);
-    console.error(stderr);
   } else {
-    console.log('Extraction complete!');
-    // List files to see how many were extracted
-    const files = fs.readdirSync(outputDir).filter(f => f.endsWith('.webp'));
-    console.log(`Extracted ${files.length} frames.`);
+    const files = fs.readdirSync(tempDir).filter(f => f.endsWith('.webp')).sort();
+    console.log(`Extracted ${files.length} frames total.`);
+    
+    // We want exactly 140 frames
+    const targetCount = 140;
+    const step = files.length / targetCount;
+    
+    let count = 0;
+    for (let i = 0; i < targetCount; i++) {
+      const idx = Math.min(Math.floor(i * step), files.length - 1);
+      const file = files[idx];
+      const newName = String(count + 1).padStart(4, '0') + '.webp';
+      fs.copyFileSync(path.join(tempDir, file), path.join(outputDir, newName));
+      count++;
+    }
+    
+    console.log(`Saved ${count} frames to output directory.`);
+    
+    // Cleanup temp
+    fs.rmSync(tempDir, { recursive: true, force: true });
+    console.log('Done!');
   }
 });

@@ -1,6 +1,8 @@
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
+import GlobalPresence from "@/components/sections/GlobalPresence";
+import FoundersNote from "@/components/sections/FoundersNote";
 import Ecosystem from "@/components/sections/Ecosystem";
 import Manufacturing from "@/components/sections/Manufacturing";
 import Research from "@/components/sections/Research";
@@ -23,6 +25,8 @@ export default function Home() {
         <Navbar />
         <Hero />
         <About />
+        <GlobalPresence />
+        <FoundersNote />
         <Ecosystem />
         <Manufacturing />
         <Research />

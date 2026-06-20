@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/ui/SmoothScroll";
+import Preloader from "@/components/ui/Preloader";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -50,6 +51,20 @@ export default function RootLayout({
       style={{ scrollBehavior: "smooth" }}
     >
       <body className="font-sans antialiased min-h-screen bg-background text-foreground overflow-x-hidden">
+        <svg width="0" height="0" className="absolute pointer-events-none">
+          <defs>
+            <filter id="remove-black" colorInterpolationFilters="sRGB">
+              <feColorMatrix type="matrix" values="
+                1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                1.5 1.5 1.5 0 0" />
+            </filter>
+          </defs>
+        </svg>
+
+        <Preloader />
+
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
