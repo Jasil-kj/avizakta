@@ -17,7 +17,8 @@ export default function Hero() {
 
     const ctx = gsap.context(() => {
       const canvas = canvasRef.current;
-      const context = canvas?.getContext("2d");
+      if (!canvas) return;
+      const context = canvas.getContext("2d");
       if (!context) return;
 
       // Use a fixed resolution that matches the extracted frames
