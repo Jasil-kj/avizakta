@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Vision() {
   return (
-    <section className="h-[100dvh] w-full relative flex items-center justify-center overflow-hidden">
+    <section className="h-screen w-full relative flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-background/80 backdrop-blur-md z-0">
         <div className="absolute inset-0 opacity-20 mix-blend-overlay" style={{
           backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuATJQXsriG3HtOddqpPrfdiUEXuiUQ3SoMKztt9k3rgo7YUWjqBq90PkmOCORNmipTH6qFSDUwo5VZgBhTk7dm4ia61ZDx0_qtK55DHU3vdzoGaj6p6Mf_WdYXrNAhKiz0VhjtQJDa_MxZpwb15FNzpqGuFuhHq5puVij574tb84PKSNua1D9FPAIfXnXG8d5Zli9oWKTyC_6obVEAuiE2SQY6dLELJelK5c6pDUrP3tFhYoey6ESoDhz9y6PpAX9KSjAYQPJdx9VM')",
