@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ChevronDown } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ ignoreMobileResize: true });
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -78,7 +79,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="h-screen w-full relative bg-background overflow-hidden" id="home">
+    <section ref={containerRef} className="h-[100dvh] w-full relative bg-background overflow-hidden" id="home">
       <div className="absolute inset-0 z-0">
         <canvas
           ref={canvasRef}
