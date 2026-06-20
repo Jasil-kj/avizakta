@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main className="min-h-screen text-on-background selection:bg-primary/30 selection:text-primary">
       {/* Global Fixed Background */}
-      <div className="fixed inset-0 w-full h-screen pointer-events-none z-0 bg-background">
+      <div className="fixed inset-0 w-full h-[100dvh] pointer-events-none z-0 bg-background">
         <AmbientBackground />
       </div>
 

@@ -38,11 +38,19 @@ export default function Hero() {
         images.push(img);
       }
 
+      let lastDrawnImage: HTMLImageElement | null = null;
+
       const render = () => {
-        if (images[sequence.frame]) {
+        const img = images[sequence.frame];
+        // Only draw if the image is fully downloaded and decoded
+        if (img && img.complete && img.naturalHeight !== 0) {
           context.clearRect(0, 0, canvas.width, canvas.height);
-          // Draw the image to fill the canvas. CSS object-cover handles the aspect ratio cropping.
-          context.drawImage(images[sequence.frame], 0, 0, canvas.width, canvas.height);
+          context.drawImage(img, 0, 0, canvas.width, canvas.height);
+          lastDrawnImage = img;
+        } else if (lastDrawnImage) {
+          // If the target frame hasn't loaded over the network yet, keep drawing the last good frame
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          context.drawImage(lastDrawnImage, 0, 0, canvas.width, canvas.height);
         }
       };
 
@@ -78,7 +86,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="h-screen w-full relative bg-background overflow-hidden" id="home">
+    <section ref={containerRef} className="h-[100dvh] w-full relative bg-background overflow-hidden" id="home">
       <div className="absolute inset-0 z-0">
         <canvas
           ref={canvasRef}
