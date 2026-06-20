@@ -84,8 +84,6 @@ export default function Hero() {
           ref={canvasRef}
           className="w-full h-full object-cover"
         />
-        {/* Subtle overlay to ensure text is readable over the video */}
-        <div className="absolute inset-0 bg-background/50 mix-blend-overlay"></div>
       </div>
 
       <div className="absolute inset-0 z-10 pointer-events-none">
