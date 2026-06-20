@@ -20,8 +20,9 @@ export default function AmbientBackground() {
     if (!ctx) return;
 
     let particles: Particle[] = [];
-    const particleCount = 70; // High-tech low density
-    const maxDistance = 180;
+    // Increased particle count so nodes are more visible
+    const particleCount = 120; 
+    const maxDistance = 220;
     
     // Convert hex #D4AF37 to rgb for rgba
     const colorRgb = "212, 175, 55";
