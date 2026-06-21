@@ -91,10 +91,10 @@ export default function Hero() {
 
   return (
     <section ref={containerRef} className="h-[100dvh] w-full relative bg-background overflow-hidden" id="home">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-[#0F0F0F]">
         <canvas
           ref={canvasRef}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-[center_center] md:object-center max-md:object-[left_center]"
         />
       </div>
 

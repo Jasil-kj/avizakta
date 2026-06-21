@@ -13,7 +13,7 @@ import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen text-on-background selection:bg-primary/30 selection:text-primary">
+    <main className="min-h-screen text-on-background selection:bg-primary/30 selection:text-primary overflow-x-hidden w-full max-w-[100vw]">
       {/* Global Fixed Background */}
       <div className="fixed inset-0 pointer-events-none z-0 bg-background">
         {/* Background gradient or solid color is applied here */}
