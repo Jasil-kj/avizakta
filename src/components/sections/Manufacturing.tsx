@@ -34,7 +34,7 @@ export default function Manufacturing() {
   return (
     <section className="py-20 md:py-32 bg-surface-dim/80 backdrop-blur-md px-6 md:px-16" id="capabilities">
       <div className="max-w-[1440px] mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}

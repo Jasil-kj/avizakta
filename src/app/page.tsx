@@ -10,14 +10,13 @@ import Process from "@/components/sections/Process";
 import Vision from "@/components/sections/Vision";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
-import AmbientBackground from "@/components/ui/AmbientBackground";
 
 export default function Home() {
   return (
     <main className="min-h-screen text-on-background selection:bg-primary/30 selection:text-primary">
       {/* Global Fixed Background */}
       <div className="fixed inset-0 pointer-events-none z-0 bg-background">
-        <AmbientBackground />
+        {/* Background gradient or solid color is applied here */}
       </div>
 
       {/* Content Layer */}
