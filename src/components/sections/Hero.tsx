@@ -23,12 +23,15 @@ export default function Hero() {
       if (!context) return;
 
       // Use a fixed resolution that matches the extracted frames
-      canvas.width = 1920;
+      const isMobile = window.innerWidth < 768;
+      canvas.width = isMobile ? 608 : 1920;
       canvas.height = 1080;
 
       const frameCount = 140;
       const currentFrame = (index: number) =>
-        `/hero-sequence/${(index + 1).toString().padStart(4, "0")}.webp`;
+        isMobile
+          ? `/hero-sequence-mobile/${(index + 1).toString().padStart(4, "0")}.webp`
+          : `/hero-sequence/${(index + 1).toString().padStart(4, "0")}.webp`;
 
       const images: HTMLImageElement[] = [];
       const sequence = { frame: 0 };

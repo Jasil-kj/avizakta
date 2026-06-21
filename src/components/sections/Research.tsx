@@ -19,22 +19,7 @@ export default function Research() {
           <p className="text-on-surface-variant text-lg mb-12">
             Our R&D division focuses on the intersection of materials science and digital systems. From smart-city connectivity to advanced thermal management in electronics, we are building the substrate of tomorrow's technology.
           </p>
-          <div className="space-y-8">
-            <div className="flex items-start gap-6 group">
-              <div className="w-1.5 h-16 bg-primary group-hover:h-20 transition-all"></div>
-              <div>
-                <h5 className="text-xl font-display font-semibold mb-2">Smart Control Systems</h5>
-                <p className="text-on-surface-variant text-sm">Advanced IoT integration for industrial automation.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-6 group">
-              <div className="w-1.5 h-16 bg-primary/30 group-hover:bg-primary transition-all"></div>
-              <div>
-                <h5 className="text-xl font-display font-semibold mb-2">Thermal Engineering</h5>
-                <p className="text-on-surface-variant text-sm">Proprietary heat dissipation technologies for high-performance hardware.</p>
-              </div>
-            </div>
-          </div>
+
         </motion.div>
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
