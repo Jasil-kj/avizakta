@@ -113,8 +113,8 @@ export default function Navbar() {
                 key={link.name}
                 href={`#${link.href}`}
                 className={cn(
-                  "text-3xl font-display font-medium uppercase wide-tracking transition-colors",
-                  activeSection === link.href ? "text-primary" : "text-on-background hover:text-primary"
+                  "font-label text-lg uppercase wide-tracking transition-colors",
+                  activeSection === link.href ? "text-primary font-bold" : "text-on-surface-variant hover:text-primary"
                 )}
                 onClick={() => setMobileMenuOpen(false)}
               >
