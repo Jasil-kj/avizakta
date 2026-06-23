@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import LogoCanvas from "./LogoCanvas";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/ui/Logo";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,13 +11,43 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
+  const navLinks = [
+    { name: "Home", href: "home" },
+    { name: "Divisions", href: "divisions" },
+    { name: "Engineering", href: "capabilities" },
+    { name: "About", href: "company" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // Scroll spy logic
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -60% 0px" }
+    );
+
+    const sectionIds = ["home", "divisions", "capabilities", "company"];
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -33,39 +64,29 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-3 md:gap-4 relative z-50 group"
         >
-          <img src="/logo-mark.png" alt="Avizakta Mark" className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto object-contain" />
-          <Logo className="h-8 sm:h-10 md:h-14 lg:h-16 w-auto object-contain" />
+          <LogoCanvas src="/images/gold-logo.png" className="h-10 sm:h-12 md:h-14 lg:h-16" />
+          <LogoCanvas src="/images/gold-text-logo.jpg" className="h-6 sm:h-8 md:h-10 lg:h-12" />
         </Link>
         <div className="hidden lg:flex items-center space-x-12">
-          <Link
-            href="#home"
-            className="font-label text-sm uppercase wide-tracking text-primary font-bold transition-all duration-300 border-b-2 border-primary pb-1"
-          >
-            Home
-          </Link>
-          <Link
-            href="#divisions"
-            className="font-label text-sm uppercase wide-tracking text-on-surface-variant hover:text-primary transition-colors duration-300"
-          >
-            Divisions
-          </Link>
-          <Link
-            href="#capabilities"
-            className="font-label text-sm uppercase wide-tracking text-on-surface-variant hover:text-primary transition-colors duration-300"
-          >
-            Engineering
-          </Link>
-          <Link
-            href="#company"
-            className="font-label text-sm uppercase wide-tracking text-on-surface-variant hover:text-primary transition-colors duration-300"
-          >
-            About
-          </Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={`#${link.href}`}
+              className={cn(
+                "font-label text-sm uppercase wide-tracking font-bold transition-all duration-300 pb-1",
+                activeSection === link.href
+                  ? "text-primary border-b-2 border-primary"
+                  : "text-on-surface-variant hover:text-primary border-b-2 border-transparent"
+              )}
+            >
+              {link.name}
+            </Link>
+          ))}
         </div>
         <div className="flex items-center gap-4 lg:gap-6 relative z-50">
 
           <a href="https://wa.me/919383428349" target="_blank" rel="noopener noreferrer" className="bg-primary text-on-primary px-8 py-2 font-bold uppercase wide-tracking text-xs hover:brightness-110 active:scale-95 transition-all hidden md:block text-center">
-            Contact Sales
+            Contact
           </a>
           <button 
             aria-label="Toggle mobile menu"
@@ -87,36 +108,21 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             className="lg:hidden absolute top-full left-0 w-full bg-background border-b border-primary/20 shadow-2xl py-8 px-6 flex flex-col gap-8"
           >
-            <Link
-              href="#home"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-label text-lg uppercase wide-tracking text-primary font-bold"
-            >
-              Home
-            </Link>
-            <Link
-              href="#divisions"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-label text-lg uppercase wide-tracking text-on-surface-variant"
-            >
-              Divisions
-            </Link>
-            <Link
-              href="#capabilities"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-label text-lg uppercase wide-tracking text-on-surface-variant"
-            >
-              Engineering
-            </Link>
-            <Link
-              href="#company"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-label text-lg uppercase wide-tracking text-on-surface-variant"
-            >
-              About
-            </Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={`#${link.href}`}
+                className={cn(
+                  "text-3xl font-display font-medium uppercase wide-tracking transition-colors",
+                  activeSection === link.href ? "text-primary" : "text-on-background hover:text-primary"
+                )}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
             <a href="https://wa.me/919383428349" target="_blank" rel="noopener noreferrer" className="bg-primary text-on-primary px-8 py-4 font-bold uppercase wide-tracking text-sm mt-4 text-center">
-              Contact Sales
+              Contact
             </a>
           </motion.div>
         )}

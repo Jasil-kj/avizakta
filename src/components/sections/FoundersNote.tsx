@@ -11,7 +11,7 @@ export default function FoundersNote() {
   );
 
   return (
-    <section className="py-24 md:py-32 bg-background relative overflow-hidden border-t border-primary/10">
+    <section className="py-16 md:py-20 bg-background relative overflow-hidden border-t border-primary/10">
       {/* Subtle gold gradient glow behind the content */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-full max-h-[800px] bg-primary/5 blur-[150px] pointer-events-none rounded-full" />
 
@@ -52,8 +52,8 @@ export default function FoundersNote() {
           className="flex flex-col items-center text-center md:text-left md:items-start"
         >
           {/* Large quotation-style opening statement */}
-          <div className="mb-12 md:mb-16 text-center w-full">
-            <span className="block text-4xl md:text-6xl font-serif text-primary mb-4 leading-none opacity-50">"</span>
+          <div className="mb-8 md:mb-12 text-center w-full">
+            <span className="block text-4xl md:text-6xl font-serif text-primary mb-2 leading-none opacity-50">"</span>
             <p className="text-2xl md:text-3xl lg:text-4xl font-display font-medium text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#F0DDAA] to-[#B8860B] leading-tight md:leading-snug max-w-3xl mx-auto">
               At Avizakta, we believe great spaces are shaped by the technologies that power them.
             </p>
@@ -78,9 +78,9 @@ export default function FoundersNote() {
           </div>
 
           {/* Signature Block */}
-          <div className="mt-20 pt-10 w-full flex flex-col items-center">
+          <div className="mt-12 pt-8 w-full flex flex-col items-center">
             {/* Premium signature-style divider */}
-            <div className="w-48 h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent mb-8"></div>
+            <div className="w-48 h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent mb-6"></div>
             
             <div className="flex flex-col items-center text-center">
               {/* Script font for signature feeling */}

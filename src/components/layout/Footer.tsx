@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/ui/Logo";
+import LogoCanvas from "./LogoCanvas";
 
 const InstagramIcon = ({ size = 24, className = "" }: { size?: number, className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -27,8 +28,8 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 md:px-16 py-16 max-w-[1440px] mx-auto">
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center gap-4 mb-8">
-            <img src="/logo-mark.png" alt="Avizakta Mark" className="h-10 md:h-14 w-auto object-contain" />
-            <Logo className="h-14 md:h-20 w-auto object-contain" />
+            <LogoCanvas src="/images/gold-logo.png" className="h-20 md:h-28" />
+            <LogoCanvas src="/images/gold-text-logo.jpg" className="h-10 md:h-16" />
           </div>
           <p className="text-on-surface-variant max-w-md leading-relaxed mb-8">
             An enterprise dedicated to the rigorous application of engineering
@@ -65,25 +66,15 @@ export default function Footer() {
           <h6 className="font-label text-primary wide-tracking mb-8 uppercase text-xs">
             Divisions
           </h6>
-          <ul className="space-y-4 text-on-surface-variant text-sm">
+          <ul className="space-y-6 text-on-surface-variant text-sm">
             <li>
               <Link href="#" className="hover:text-primary transition-colors">
-                Decobox Division
+                decobox.store
               </Link>
             </li>
             <li>
               <Link href="#" className="hover:text-primary transition-colors">
-                Bovex Aerospace
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="hover:text-primary transition-colors">
-                Precision Engineering
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="hover:text-primary transition-colors">
-                Global Logistics
+                Bovex
               </Link>
             </li>
           </ul>
@@ -119,7 +110,7 @@ export default function Footer() {
       <div className="border-t border-primary/5 py-8">
         <div className="max-w-[1440px] mx-auto px-6 md:px-16 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[10px] font-label uppercase wide-tracking text-on-surface-variant text-center md:text-left">
-            © 2012 Avizakta Manufacturing Group. All rights
+            © 2012 Avizakta. All rights
             reserved.
           </p>
           <p className="text-[10px] font-label uppercase wide-tracking text-primary/40">

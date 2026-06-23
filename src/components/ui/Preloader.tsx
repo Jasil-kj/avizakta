@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Logo } from "./Logo";
+import LogoCanvas from "../layout/LogoCanvas";
 
 export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true);
@@ -47,7 +48,7 @@ export default function Preloader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <Logo className="h-12 md:h-16 lg:h-20 w-auto object-contain" />
+            <LogoCanvas src="/images/gold-logo.png" className="h-20 md:h-28 lg:h-32" />
           </motion.div>
           
           {/* Animated loading line */}

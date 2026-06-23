@@ -14,7 +14,7 @@ export default function About() {
           className="space-y-10"
         >
           <div>
-            <span className="font-label text-primary wide-tracking uppercase text-xs">The Narrative</span>
+            {/* Label removed */}
             <h2 className="text-4xl md:text-5xl font-display font-bold mt-4 leading-tight">
               Engineering Excellence <br/><span className="text-on-surface-variant">Since 2012</span>
             </h2>
@@ -22,14 +22,18 @@ export default function About() {
           <p className="text-on-surface-variant text-lg leading-relaxed max-w-xl">
             Avizakta Enterprises stands at the vanguard of industrial design and technical manufacturing. Founded on the principle of "precision first," we have evolved into a global leader providing end-to-end solutions for lighting, infrastructure, and custom engineering.
           </p>
-          <div className="grid grid-cols-2 gap-12">
-            <div className="border-l border-primary/30 pl-6">
-              <div className="text-4xl font-display font-bold gold-gradient-text">13+</div>
-              <p className="font-label text-[10px] uppercase wide-tracking text-on-surface-variant mt-2">Years of Innovation</p>
+          <div className="flex flex-col gap-12 pt-4">
+            <div className="relative pl-6 border-l border-primary/20">
+              <div className="absolute left-[-1px] top-0 w-[2px] h-10 bg-gradient-to-b from-primary to-transparent"></div>
+              <div className="text-6xl md:text-7xl font-display font-bold gold-gradient-text tracking-tighter drop-shadow-sm leading-none">13+</div>
+              <p className="font-label text-xs md:text-sm uppercase tracking-[0.4em] text-primary/80 mt-4">Years of Innovation</p>
             </div>
-            <div className="border-l border-primary/30 pl-6">
-              <div className="text-4xl font-display font-bold gold-gradient-text">500+</div>
-              <p className="font-label text-[10px] uppercase wide-tracking text-on-surface-variant mt-2">Global Patents</p>
+            
+            <div className="flex flex-col gap-4 mt-2">
+              <h3 className="font-display font-light text-sm md:text-base uppercase tracking-[0.4em] text-on-surface/80">
+                Design <span className="text-primary/40 mx-2 tracking-normal">•</span> Technology <span className="text-primary/40 mx-2 tracking-normal">•</span> Manufacturing
+              </h3>
+              <div className="w-full max-w-[320px] h-[1px] bg-gradient-to-r from-primary/60 via-primary/20 to-transparent"></div>
             </div>
           </div>
         </motion.div>
@@ -45,7 +49,7 @@ export default function About() {
             <img 
               alt="Engineering" 
               className="w-full h-full object-cover grayscale brightness-75 hover:scale-110 transition-transform duration-1000" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT4tYJp5SI3r9z643iEWUv3shtMDPuPYayzhu85iAOtfa0w0oR82ng1zF4IYBuzZXPItLA8mUEy6n-_gf4YZK3aqc7MRpZbIAmh2SnVY4gVuhKz_q6jtfCFnMHqK-PvfPn-YRrPE23BDtjQaS2PYGijVDQbhbiFOHi-WpKVyhYEAeTDXSmG-sVzO23tj3aV3nlC428FQ7u_EjvPhSDBqs933GqEKZwo0lX0ix6ZNq-2TGzFH90V13Qtf9DH-FWN8dxU66ZPTmcAfs" 
+              src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop" 
             />
           </div>
         </motion.div>

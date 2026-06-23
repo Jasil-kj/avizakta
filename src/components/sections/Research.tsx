@@ -4,42 +4,69 @@ import { motion } from "framer-motion";
 
 export default function Research() {
   return (
-    <section className="py-20 md:py-32 bg-background/80 backdrop-blur-md px-6 md:px-16 overflow-hidden" id="rd">
-      <div className="max-w-[1440px] mx-auto grid lg:grid-cols-2 gap-24 items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <span className="font-label text-primary wide-tracking uppercase text-xs">Innovation Lab</span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-on-surface mt-4 mb-8">
-            Researching <br/>The Future.
-          </h2>
-          <p className="text-on-surface-variant text-lg mb-12">
-            Our R&D division focuses on the intersection of materials science and digital systems. From smart-city connectivity to advanced thermal management in electronics, we are building the substrate of tomorrow's technology.
-          </p>
+    <section className="py-32 md:py-48 bg-background relative overflow-hidden" id="rd">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 grid lg:grid-cols-2 gap-20 lg:gap-32 items-center">
+        
+        {/* Content Side */}
+        <div className="flex flex-col justify-center order-2 lg:order-1">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-on-surface mb-8 leading-[1.1]">
+              Researching <br/>The Future.
+            </h2>
+          </motion.div>
 
-        </motion.div>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-on-surface-variant text-xl leading-relaxed mb-12 max-w-xl font-light"
+          >
+            At Avizakta, innovation is driven by continuous research, advanced engineering, and intelligent manufacturing. We explore emerging technologies to create solutions that are efficient, reliable, and built for tomorrow.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {/* Capability Row */}
+            <div className="flex flex-wrap items-center gap-3 text-primary text-sm md:text-base tracking-widest uppercase font-label">
+              <span>Advanced Product Development</span>
+              <span className="opacity-50">•</span>
+              <span>Smart Manufacturing</span>
+              <span className="opacity-50">•</span>
+              <span>Future-Ready Engineering</span>
+            </div>
+            
+            {/* Divider Line */}
+            <div className="h-px w-full max-w-2xl bg-gradient-to-r from-primary/50 to-transparent mt-6" />
+          </motion.div>
+        </div>
+
+        {/* Image Side */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="relative"
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="relative h-[600px] lg:h-[750px] w-full group order-1 lg:order-2"
         >
-          <div className="glass-panel p-1 border-2 border-primary/20">
+          <div className="absolute inset-0 z-10 overflow-hidden border border-primary/20 bg-surface-container">
             <img 
-              alt="R&D" 
-              className="w-full h-full object-cover grayscale brightness-50" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0ikHh0UeuWT7b0gYT8YHEBd4U2teixS-hhqebTv1J4ouln7b_dKwegotG8XLG6ASoi7HluK833w92ZbbfFgapHKQ31f1zYagvA9tt70BkJqLAGQobUCdsQgJUgk4QgZk_hRbYJekE0AjEc_JrlO911o-a7kxHqsG1TjrRnNfCQkWO_5ZGIVIHNC2NFJy2j6b9VLya4MpagxRe8qFZ6Wz7w5eqKlA_h_5NzftgHYlFPjBlU9gqqcSH1SbZRJlCeA8GBqdYDQcYuzw" 
+              alt="Advanced Engineering Research" 
+              className="w-full h-full object-cover grayscale brightness-90 group-hover:scale-[1.03] transition-transform duration-[1.5s] ease-out" 
+              src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=2070&auto=format&fit=crop" 
             />
           </div>
-          <div className="absolute -bottom-8 -left-8 md:-left-16 glass-panel p-8 gold-border animate-pulse">
-            <div className="text-3xl font-display font-bold text-primary mb-1">98.4%</div>
-            <p className="font-label text-[10px] uppercase wide-tracking text-on-surface-variant">Efficiency Gain</p>
-          </div>
         </motion.div>
+        
       </div>
     </section>
   );

@@ -24,13 +24,25 @@ export default function Home() {
         <Navbar />
         <Hero />
         <About />
-        <GlobalPresence />
-        <FoundersNote />
+        
+        <div className="w-full max-w-[1440px] mx-auto h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+        
         <Ecosystem />
-        <Manufacturing />
+        
+        <div className="w-full max-w-[1440px] mx-auto h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+        
         <Research />
+        <Manufacturing />
+        <GlobalPresence />
         <Process />
         <Vision />
+        
+        <div className="w-full max-w-[1440px] mx-auto h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+        
+        <FoundersNote />
+        
+        <div className="w-full max-w-[1440px] mx-auto h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+        
         <Contact />
         <Footer />
       </div>

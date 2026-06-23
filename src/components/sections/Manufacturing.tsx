@@ -41,7 +41,7 @@ export default function Manufacturing() {
             viewport={{ once: true }}
             className="max-w-2xl"
           >
-            <span className="font-label text-primary wide-tracking uppercase text-xs">Capabilities</span>
+            {/* Label removed as per user request */}
             <h2 className="text-4xl md:text-5xl font-display font-bold text-on-surface mt-4">
               Core Capabilities.
             </h2>

@@ -1,7 +1,51 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+const PremiumHeading = () => {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const headingRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!headingRef.current) return;
+    const rect = headingRef.current.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
+  return (
+    <div 
+      className="relative inline-block mt-4 cursor-default group"
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+      ref={headingRef}
+    >
+      <h2 className="text-4xl md:text-5xl font-display font-bold text-on-surface">
+        Our Brands & Divisions.
+      </h2>
+      
+      <h2 
+        className="text-4xl md:text-5xl font-display font-bold absolute inset-0 pointer-events-none transition-opacity duration-500 ease-out"
+        style={{
+          color: "transparent",
+          backgroundImage: `radial-gradient(250px circle at ${mousePos.x}px ${mousePos.y}px, #E3C15A 0%, #D4AF37 40%, transparent 100%)`,
+          WebkitBackgroundClip: "text",
+          backgroundClip: "text",
+          opacity: isHovering ? 1 : 0,
+          textShadow: isHovering ? "0 4px 12px rgba(212,175,55,0.3)" : "none"
+        }}
+        aria-hidden="true"
+      >
+        Our Brands & Divisions.
+      </h2>
+    </div>
+  );
+};
 
 export default function Ecosystem() {
   const [expandedBrand, setExpandedBrand] = useState<string | null>(null);
@@ -15,8 +59,7 @@ export default function Ecosystem() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="font-label text-primary wide-tracking uppercase text-xs">Our Brands & Divisions</span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mt-4">AVIZAKTA ENTERPRISES</h2>
+          <PremiumHeading />
         </motion.div>
 
         <div className="w-full relative">
