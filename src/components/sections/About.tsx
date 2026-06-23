@@ -49,7 +49,7 @@ export default function About() {
             <img 
               alt="Engineering" 
               className="w-full h-full object-cover grayscale brightness-75 hover:scale-110 transition-transform duration-1000" 
-              src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop" 
+              src="/images/grinder.png" 
             />
           </div>
         </motion.div>
