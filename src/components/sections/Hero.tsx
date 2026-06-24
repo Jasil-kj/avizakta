@@ -27,7 +27,7 @@ export default function Hero() {
       canvas.width = isMobile ? 608 : 1920;
       canvas.height = 1080;
 
-      const frameCount = 140;
+      const frameCount = 240;
       const currentFrame = (index: number) =>
         isMobile
           ? `/hero-sequence-mobile/${(index + 1).toString().padStart(4, "0")}.webp`
