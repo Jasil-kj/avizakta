@@ -44,13 +44,18 @@ export default function About() {
           transition={{ duration: 1 }}
           className="relative group"
         >
-          <div className="absolute -inset-4 border border-primary/10 group-hover:border-primary/40 transition-all duration-700"></div>
-          <div className="aspect-square bg-surface-container overflow-hidden gold-border">
-            <img 
-              alt="Engineering" 
-              className="w-full h-full object-cover grayscale brightness-75 hover:scale-110 transition-transform duration-1000" 
-              src="/images/grinder.png" 
-            />
+          <div className="absolute -inset-2 md:-inset-4 border border-primary/10 group-hover:border-primary/40 transition-all duration-700 hidden md:block"></div>
+          <div className="w-full aspect-video bg-surface-container overflow-hidden gold-border rounded-xl md:rounded-2xl shadow-lg">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              preload="auto"
+              className="w-full h-full object-cover transform-gpu will-change-transform hover:scale-105 transition-transform duration-1000" 
+            >
+              <source src="/mid_vid_new.mp4" type="video/mp4" />
+            </video>
           </div>
         </motion.div>
       </div>

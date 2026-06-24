@@ -64,8 +64,11 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-3 md:gap-4 relative z-50 group"
         >
-          <LogoCanvas src="/images/gold-logo.png" className="h-10 sm:h-12 md:h-14 lg:h-16" />
-          <LogoCanvas src="/images/gold-text-logo.jpg" className="h-6 sm:h-8 md:h-10 lg:h-12" />
+          <img 
+            src="/images/Avizakta_Gold_Logo.png" 
+            className="h-12 sm:h-14 md:h-16 lg:h-20 object-contain mix-blend-screen" 
+            alt="Avizakta Logo"
+          />
         </Link>
         <div className="hidden lg:flex items-center space-x-12">
           {navLinks.map((link) => (

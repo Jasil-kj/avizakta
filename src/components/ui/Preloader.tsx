@@ -48,7 +48,11 @@ export default function Preloader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <LogoCanvas src="/images/gold-logo.png" className="h-20 md:h-28 lg:h-32" />
+            <img 
+              src="/images/Avizakta_Gold_Logo.png" 
+              className="h-20 md:h-28 lg:h-32 object-contain mix-blend-screen" 
+              alt="Avizakta Logo" 
+            />
           </motion.div>
           
           {/* Animated loading line */}
@@ -66,7 +70,7 @@ export default function Preloader() {
             transition={{ duration: 0.8, delay: 1 }}
             className="font-label text-primary/60 uppercase text-[10px] tracking-[0.3em] mt-6"
           >
-            Initializing System
+            Initializing Innovation
           </motion.span>
         </motion.div>
       )}

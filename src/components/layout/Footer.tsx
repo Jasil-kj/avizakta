@@ -28,8 +28,11 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 md:px-16 py-16 max-w-[1440px] mx-auto">
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center gap-4 mb-8">
-            <LogoCanvas src="/images/gold-logo.png" className="h-20 md:h-28" />
-            <LogoCanvas src="/images/gold-text-logo.jpg" className="h-10 md:h-16" />
+            <img 
+              src="/images/Avizakta_Gold_Logo.png" 
+              className="h-32 md:h-40 lg:h-48 object-contain mix-blend-screen -ml-2" 
+              alt="Avizakta Logo"
+            />
           </div>
           <p className="text-on-surface-variant max-w-md leading-relaxed mb-8">
             An enterprise dedicated to the rigorous application of engineering

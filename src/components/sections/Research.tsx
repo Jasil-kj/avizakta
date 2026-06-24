@@ -62,7 +62,7 @@ export default function Research() {
             <img 
               alt="Advanced Engineering Research" 
               className="w-full h-full object-cover grayscale brightness-90 group-hover:scale-[1.03] transition-transform duration-[1.5s] ease-out" 
-              src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=2070&auto=format&fit=crop" 
+              src="/research-image.png" 
             />
           </div>
         </motion.div>
