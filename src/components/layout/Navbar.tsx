@@ -65,7 +65,7 @@ export default function Navbar() {
           className="flex items-center gap-3 md:gap-4 relative z-50 group"
         >
           <img 
-            src="/images/Avizakta_Gold_Logo.png" 
+            src="/images/Avizakta_Letter_Big_Size.png" 
             className="h-12 sm:h-14 md:h-16 lg:h-20 object-contain mix-blend-screen" 
             alt="Avizakta Logo"
           />
