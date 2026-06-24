@@ -66,7 +66,7 @@ export default function Navbar() {
         >
           <img 
             src="/images/Avizakta_Letter_Big_Size.png" 
-            className="h-12 sm:h-14 md:h-16 lg:h-20 object-contain mix-blend-screen" 
+            className="h-8 sm:h-10 md:h-12 lg:h-14 object-contain mix-blend-screen" 
             alt="Avizakta Logo"
           />
         </Link>

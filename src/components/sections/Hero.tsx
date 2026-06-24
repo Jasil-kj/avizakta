@@ -11,7 +11,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const textGroup1Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!containerRef.current || !canvasRef.current) return;
@@ -79,10 +78,7 @@ export default function Hero() {
         duration: 10,
       }, 0);
 
-      // Text Animations Sync
-      // Scene 1: Initial Logo (0-2)
-      tl.to(textGroup1Ref.current, { opacity: 1, scale: 1, duration: 1 }, 0)
-        .to(textGroup1Ref.current, { opacity: 0, scale: 1.1, duration: 1 }, 2);
+
 
     }, containerRef);
 
@@ -99,13 +95,7 @@ export default function Hero() {
       </div>
 
       <div className="absolute inset-0 z-10 pointer-events-none">
-        {/* Scene 1: Logo */}
-        <div ref={textGroup1Ref} className="absolute inset-0 flex flex-col items-center justify-center opacity-0 scale-90">
-          <Logo animate className="w-[90vw] max-w-[1000px] h-[20vh] md:h-[25vh] lg:h-[30vh] scale-100 md:scale-110" />
-          <p className="font-label text-primary wide-tracking uppercase mt-4">
-            Forging The Future
-          </p>
-        </div>
+
 
 
       </div>
