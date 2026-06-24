@@ -63,8 +63,8 @@ export default function Hero() {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "+=500%",
-          scrub: 0.5, // Small scrub delay for smooth interpolation
+          end: "+=800%",
+          scrub: 1, // Increased scrub delay for much smoother momentum
           pin: true,
           onUpdate: render,
         },
