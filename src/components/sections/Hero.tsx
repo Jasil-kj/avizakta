@@ -29,8 +29,8 @@ export default function Hero() {
       const frameCount = 240;
       const currentFrame = (index: number) =>
         isMobile
-          ? `/hero-sequence-mobile/${(index + 1).toString().padStart(4, "0")}.webp`
-          : `/hero-sequence/${(index + 1).toString().padStart(4, "0")}.webp`;
+          ? `/hero-sequence-mobile/${(index + 1).toString().padStart(4, "0")}.webp?v=2`
+          : `/hero-sequence/${(index + 1).toString().padStart(4, "0")}.webp?v=2`;
 
       const images: HTMLImageElement[] = [];
       const sequence = { frame: 0 };
