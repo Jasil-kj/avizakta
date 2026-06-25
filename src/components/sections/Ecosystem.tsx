@@ -80,7 +80,9 @@ export default function Ecosystem() {
               </p>
               <button 
                 onClick={() => setExpandedBrand(expandedBrand === 'decobox' ? null : 'decobox')}
-                className="font-label text-xs uppercase wide-tracking text-primary border-b border-primary/50 pb-1 hover:border-primary transition-colors"
+                aria-expanded={expandedBrand === 'decobox'}
+                aria-controls="decobox-details"
+                className="font-label text-xs uppercase wide-tracking text-primary border-b border-primary/50 pb-1 hover:border-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 {expandedBrand === 'decobox' ? 'Close Details' : 'Explore Decobox'}
               </button>
@@ -88,6 +90,7 @@ export default function Ecosystem() {
               <AnimatePresence>
                 {expandedBrand === 'decobox' && (
                   <motion.div
+                    id="decobox-details"
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -139,7 +142,9 @@ export default function Ecosystem() {
               </p>
               <button 
                 onClick={() => setExpandedBrand(expandedBrand === 'bovex' ? null : 'bovex')}
-                className="font-label text-xs uppercase wide-tracking text-primary border-b border-primary/50 pb-1 hover:border-primary transition-colors"
+                aria-expanded={expandedBrand === 'bovex'}
+                aria-controls="bovex-details"
+                className="font-label text-xs uppercase wide-tracking text-primary border-b border-primary/50 pb-1 hover:border-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 {expandedBrand === 'bovex' ? 'Close Details' : 'Explore Bovex'}
               </button>
@@ -147,6 +152,7 @@ export default function Ecosystem() {
               <AnimatePresence>
                 {expandedBrand === 'bovex' && (
                   <motion.div
+                    id="bovex-details"
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}

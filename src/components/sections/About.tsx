@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className="py-20 md:py-32 px-6 md:px-16 bg-background/80 backdrop-blur-md" id="company">
+    <section className="py-20 md:py-32 px-6 md:px-16 bg-background/80 backdrop-blur-md" id="company" aria-labelledby="about-heading">
       <div className="max-w-[1440px] mx-auto grid md:grid-cols-2 gap-24 items-center">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
@@ -14,13 +14,12 @@ export default function About() {
           className="space-y-10"
         >
           <div>
-            {/* Label removed */}
-            <h2 className="text-4xl md:text-5xl font-display font-bold mt-4 leading-tight">
+            <h2 id="about-heading" className="text-4xl md:text-5xl font-display font-bold mt-4 leading-tight">
               Engineering Excellence <br/><span className="text-on-surface-variant">Since 2012</span>
             </h2>
           </div>
           <p className="text-on-surface-variant text-lg leading-relaxed max-w-xl">
-            Avizakta Enterprises stands at the vanguard of industrial design and technical manufacturing. Founded on the principle of "precision first," we have evolved into a global leader providing end-to-end solutions for lighting, infrastructure, and custom engineering.
+            Avizakta Enterprises stands at the vanguard of industrial design and technical manufacturing. Founded on the principle of "precision first," we have evolved into a premier engineering company providing end-to-end solutions for architectural lighting, industrial OEM manufacturing, and custom engineering.
           </p>
           <div className="flex flex-col gap-12 pt-4">
             <div className="relative pl-6 border-l border-primary/20">
@@ -51,7 +50,8 @@ export default function About() {
               loop 
               muted 
               playsInline 
-              preload="auto"
+              preload="none"
+              aria-label="Avizakta Manufacturing Process Video"
               className="w-full h-full object-cover transform-gpu will-change-transform hover:scale-105 transition-transform duration-1000" 
             >
               <source src="/mid_vid_new.mp4" type="video/mp4" />

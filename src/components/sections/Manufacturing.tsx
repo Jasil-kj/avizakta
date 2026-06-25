@@ -32,7 +32,7 @@ export default function Manufacturing() {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-surface-dim/80 backdrop-blur-md px-6 md:px-16" id="capabilities">
+    <section className="py-20 md:py-32 bg-surface-dim/80 backdrop-blur-md px-6 md:px-16" id="capabilities" aria-labelledby="capabilities-heading">
       <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
           <motion.div 
@@ -42,7 +42,7 @@ export default function Manufacturing() {
             className="max-w-2xl"
           >
             {/* Label removed as per user request */}
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-on-surface mt-4">
+            <h2 id="capabilities-heading" className="text-4xl md:text-5xl font-display font-bold text-on-surface mt-4">
               Core Capabilities.
             </h2>
           </motion.div>

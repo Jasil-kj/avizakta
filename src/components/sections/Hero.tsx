@@ -86,22 +86,32 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="h-[100dvh] w-full relative bg-background overflow-hidden" id="home">
+    <section ref={containerRef} className="h-[100dvh] w-full relative bg-background overflow-hidden" id="home" aria-label="Welcome to Avizakta">
+      {/* Visually hidden H1 for SEO and Screen Readers */}
+      <div className="sr-only">
+        <h1>Avizakta Enterprises - Premium Lighting Manufacturer & Engineering Company</h1>
+        <p>Leading the industry in architectural lighting, custom lighting solutions, and industrial OEM manufacturing. Discover engineering excellence and smart manufacturing with Avizakta.</p>
+      </div>
+
       <div className="absolute inset-0 z-0 bg-[#0F0F0F]">
+        {/* Preload first frames for LCP */}
+        <link rel="preload" as="image" href="/hero-sequence/0001.webp?v=2" media="(min-width: 768px)" fetchPriority="high" />
+        <link rel="preload" as="image" href="/hero-sequence-mobile/0001.webp?v=2" media="(max-width: 767px)" fetchPriority="high" />
+        
         <canvas
           ref={canvasRef}
+          aria-label="Avizakta Premium Lighting Product Visualization"
+          role="img"
           className="w-full h-full object-cover object-[center_center] md:object-center max-md:object-[left_center]"
         />
       </div>
 
       <div className="absolute inset-0 z-10 pointer-events-none">
 
-
-
       </div>
 
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 animate-bounce">
-        <ChevronDown className="text-primary/50" size={32} />
+        <ChevronDown className="text-primary/50" size={32} aria-hidden="true" />
       </div>
     </section>
   );

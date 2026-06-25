@@ -11,7 +11,7 @@ export default function FoundersNote() {
   );
 
   return (
-    <section className="py-16 md:py-20 bg-background relative overflow-hidden border-t border-primary/10">
+    <section className="py-16 md:py-20 bg-background relative overflow-hidden border-t border-primary/10" aria-labelledby="founder-note-heading">
       {/* Subtle gold gradient glow behind the content */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-full max-h-[800px] bg-primary/5 blur-[150px] pointer-events-none rounded-full" />
 
@@ -34,6 +34,7 @@ export default function FoundersNote() {
             Founder's Note
           </motion.h3>
           <motion.h2 
+            id="founder-note-heading"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

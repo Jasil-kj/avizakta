@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/ui/SmoothScroll";
@@ -7,16 +7,19 @@ import Preloader from "@/components/ui/Preloader";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -24,6 +27,7 @@ export const metadata: Metadata = {
   description: "Avizakta Enterprises stands at the vanguard of industrial design and technical manufacturing. We build the substrate of tomorrow's technology.",
   keywords: ["Industrial Engineering", "OEM Manufacturing", "Decobox", "Bovex", "Luxury Lighting", "Aerospace Manufacturing", "Precision Engineering", "Avizakta"],
   authors: [{ name: "Avizakta Enterprises" }],
+  robots: { index: true, follow: true },
   openGraph: {
     title: "AVIZAKTA | Modern Industrial Excellence",
     description: "Avizakta Enterprises stands at the vanguard of industrial design and technical manufacturing.",
@@ -39,11 +43,9 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport = {
+export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 };
 
 export default function RootLayout({
@@ -58,7 +60,7 @@ export default function RootLayout({
       style={{ scrollBehavior: "smooth" }}
     >
       <body className="font-sans antialiased min-h-screen bg-background text-foreground overflow-x-hidden">
-        <svg width="0" height="0" className="absolute pointer-events-none">
+        <svg width="0" height="0" className="absolute pointer-events-none" aria-hidden="true">
           <defs>
             <filter id="remove-black" colorInterpolationFilters="sRGB">
               <feColorMatrix type="matrix" values="
